@@ -367,13 +367,18 @@ if __name__ == "__main__":
     showm.initialize()
 #    showm.scene.add(actor.axes())
 
-    centers = np.array([[0, 0, 0], [5, 0, 0], [10, 0, 0]])
+    centers = np.array([[0, 0, 0], [10, 0, 0], [20, 0, 0]])
+    centers1 = np.array([[5, 0, 0], [15, 0, 0], [25, 0, 0]])
     directions = np.array([[0, 1, 0], [1, 0, 0], [0, 0, 1]])
     colors = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1.]])
-    sq_params = np.array([1, 2, 1 ,1 ,1])
+    sq_params1 = np.array([1, 2, 5, 1, 1])
+    sq_params2 = np.array([1, 2, 1, 1, 1])
 
     showm.scene.add(custom_glyph(centers=centers,
-                                 colors=colors, sq_params=sq_params,
+                                 colors=colors, sq_params=sq_params1,
+                                 directions=directions, geom='superquadric'))
+    showm.scene.add(custom_glyph(centers=centers1,
+                                 colors=colors, sq_params=sq_params2,
                                  directions=directions, geom='superquadric'))
     # showm.scene.background((1, 1, 1))
     showm.start()
